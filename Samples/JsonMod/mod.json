@@ -1,0 +1,53 @@
+{
+  "id": "com.example.jsonsample",
+  "name": "JSON Sample Mod",
+  "version": "1.0.0",
+  "author": "you",
+  "description": "A no-code mod: one new dish with its recipe, a stat upgrade, and a faster waiter.",
+
+  "balance": {
+    "tipNeutral": { "scale": 1.5 }
+  },
+
+  "stats": [
+    { "stat": "MoveSpeed", "mult": 1.1 }
+  ],
+
+  "foods": [
+    {
+      "id": "json_orange_pie",
+      "name": "Orange Pie",
+      "price": 160,
+      "type": "Sweet",
+      "ingredient": "Flora",
+      "cookTime": 7,
+      "eatTime": 9,
+      "unlockedByDefault": false,
+      "sprite": "orange.png"
+    }
+  ],
+
+  "upgrades": [
+    {
+      "id": "json_orange_pie_recipe",
+      "name": "Orange Pie Recipe",
+      "description": "Unlocks the Orange Pie.",
+      "cost": 150,
+      "category": "KitchenAndFood",
+      "icon": "orange.png",
+      "effects": [
+        { "type": "UnlockFood", "food": "json_orange_pie" }
+      ]
+    },
+    {
+      "id": "json_sharp_knives",
+      "name": "Sharp Knives",
+      "description": "The kitchen cooks 25% faster.",
+      "cost": 180,
+      "category": "KitchenAndFood",
+      "effects": [
+        { "type": "Stat", "stat": "CookSpeedMultiplier", "mult": 1.25 }
+      ]
+    }
+  ]
+}

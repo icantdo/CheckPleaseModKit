@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/Samples/">
+    <Project Path="Samples/Behavior/Behavior.csproj" />
+    <Project Path="Samples/ModBurger/ModBurger.csproj" />
+    <Project Path="Samples/TipBoost/TipBoost.csproj" />
+  </Folder>
+  <Folder Name="/Templates/">
+    <Project Path="Templates/CodeMod/CodeMod.csproj" />
+  </Folder>
+  <Project Path="CheckPlease.ModKit/CheckPlease.ModKit.csproj" />
+</Solution>

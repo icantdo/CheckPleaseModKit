@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <DebugType>embedded</DebugType>
+
+    <!-- Oyunun kurulu oldugu klasor. Farkliysa degistir, ya da: dotnet build -p:GameDir="D:\Oyunlar\Check Please! Demo" -->
+    <GameDir Condition="'$(GameDir)' == ''">C:\Program Files (x86)\Steam\steamapps\common\Check Please! Demo</GameDir>
+    <ManagedDir>$(GameDir)\CheckPlease_Data\Managed</ManagedDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+    <Reference Include="$(GameDir)\BepInEx\core\BepInEx.dll" Private="false" />
+    <Reference Include="$(GameDir)\BepInEx\core\0Harmony.dll" Private="false" />
+    <Reference Include="$(GameDir)\BepInEx\plugins\CheckPlease.ModKit\CheckPlease.ModKit.dll" Private="false" />
+    <Reference Include="$(ManagedDir)\CheckPlease.Runtime.dll" Private="false" />
+    <Reference Include="$(ManagedDir)\UnityEngine*.dll" Private="false" />
+  </ItemGroup>
+
+  <!-- Derleyince DLL otomatik olarak oyunun plugins klasorune kopyalanir -->
+  <Target Name="DeployToGame" AfterTargets="Build" Condition="Exists('$(GameDir)\BepInEx\plugins')">
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(GameDir)\BepInEx\plugins\$(AssemblyName)" />
+  </Target>
+</Project>

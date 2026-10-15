@@ -1,0 +1,18 @@
+# Derleme ciktilari
+bin/
+obj/
+dist/
+.vs/
+*.user
+
+# ----------------------------------------------------------------------------
+# OYUNUN KENDI KODU - TELIF HAKKI BASKASINA AIT, ASLA YAYINLAMA
+# (DLL'den cikarilan kaynak ve ondan turetilen dokumanlar)
+# ----------------------------------------------------------------------------
+/CheckPlease/
+/CheckPlease.Runtime.csproj
+/Properties/
+/UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs
+/docs/CODEBASE_MAP.md
+/CLAUDE.md
+/AGENTS.md
